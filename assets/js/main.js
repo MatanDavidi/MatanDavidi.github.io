@@ -43,6 +43,11 @@ jQuery(document).ready(function($) {
       return false;
         
     });
+
+    $(".scroll-down").click(function() {
+        $("html, body").animate({ scrollTop: $(".portfolio").offset().top }, 800);
+        return false;
+    });
     
     
     // SCROLL REVEAL SETUP
@@ -51,6 +56,18 @@ jQuery(document).ready(function($) {
         duration: 600,
         delay: 500,
         origin: "bottom",
+        rotate: { x: 0, y: 0, z: 0 },
+        opacity: 0,
+        distance: "20vh",
+        viewFactor: 0.4,
+        scale: 1,
+        useDelay: 'onload',
+    });
+
+    sr.reveal(".scroll-animated-from-top", { 
+        duration: 600,
+        delay: 500,
+        origin: "top",
         rotate: { x: 0, y: 0, z: 0 },
         opacity: 0,
         distance: "20vh",

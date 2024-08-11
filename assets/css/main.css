@@ -28,6 +28,7 @@
 html
 {
     font-size: 10px !important;
+    scroll-behavior: smooth;
 }
 
 body
@@ -290,7 +291,7 @@ a:hover
 .hero
 {
     position: fixed;
-    z-index: -1;
+    /* z-index: -1; */
     top: 0;
     left: 0;
 
@@ -495,7 +496,7 @@ a:hover
     width: 100%;
     height: 100%;
 
-    background: url(../img/background.jpg);
+    background: url(../img/background_code.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -610,6 +611,19 @@ a:hover
     letter-spacing: .05em;
 
     opacity: .85;
+}
+
+.header i
+{
+    font-size: 2.6rem;
+    line-height: 2.4em;
+
+    display: inline-block;
+
+    width: 2.4em;
+
+    cursor: pointer;
+    vertical-align: middle;
 }
 
 .footer i
