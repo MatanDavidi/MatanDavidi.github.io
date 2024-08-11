@@ -511,6 +511,10 @@ a:hover
     padding: 0 30px;
 }
 
+.portfolio .section-title {
+    text-align: center;
+}
+
 .portfolio .item
 {
     position: relative;
@@ -522,6 +526,22 @@ a:hover
     margin: 0 auto 10rem auto;
 
     border: 6px solid #fff;
+}
+
+.portfolio .title {
+    position: relative;
+    z-index: 1;
+
+    -webkit-transition: .25s ease;
+         -o-transition: .25s ease;
+            transition: .25s ease;
+    -webkit-transform: translate(100%,-50%);
+        -ms-transform: translate(100%,-50%);
+            transform: translate(100%,-50%);
+    text-align: center;
+    font-size: 7rem;
+
+    opacity: 0;
 }
 
 .portfolio .item:before
@@ -577,13 +597,18 @@ a:hover
     background: #fff;
 }
 
-.portfolio .item:hover i
+.portfolio .item:hover i, .portfolio .item:hover .title
 {
     -webkit-transform: translate(0,-50%);
         -ms-transform: translate(0,-50%);
             transform: translate(0,-50%);
 
     opacity: 1;
+}
+
+.portfolio .portfolio-paragraph {
+    position: relative;
+    z-index: 1;
 }
 
 /** 7. FOOTER
