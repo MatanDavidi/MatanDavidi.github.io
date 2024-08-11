@@ -528,7 +528,7 @@ a:hover
     border: 6px solid #fff;
 }
 
-.portfolio .title {
+.portfolio .item-title {
     position: relative;
     z-index: 1;
 
@@ -541,6 +541,7 @@ a:hover
     text-align: center;
     font-size: 7rem;
 
+    background-color: rgba(30, 30, 30, 0.4);
     opacity: 0;
 }
 
@@ -597,7 +598,7 @@ a:hover
     background: #fff;
 }
 
-.portfolio .item:hover i, .portfolio .item:hover .title
+.portfolio .item:hover i, .portfolio .item:hover .item-title
 {
     -webkit-transform: translate(0,-50%);
         -ms-transform: translate(0,-50%);
