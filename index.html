@@ -15,14 +15,14 @@
         <title>Matan Davidi - Personal website</title>
 
         <!-- FAVICON -->
-        <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicon/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
-        <link rel="manifest" href="/assets/img/favicon/site.webmanifest">
-        <link rel="mask-icon" href="/assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
-        <link rel="shortcut icon" href="/assets/img/favicon/favicon.ico">
+        <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+        <link rel="manifest" href="assets/img/favicon/site.webmanifest">
+        <link rel="mask-icon" href="assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="assets/img/favicon/favicon.ico">
         <meta name="msapplication-TileColor" content="#da532c">
-        <meta name="msapplication-config" content="/assets/img/favicon/browserconfig.xml">
+        <meta name="msapplication-config" content="assets/img/favicon/browserconfig.xml">
         <meta name="theme-color" content="#ffffff">
 
         <!-- FONTS -->
@@ -61,7 +61,7 @@
         <!-- NAVIGATION BUTTON -->
         <nav class="navigation-button">
 
-            <a href="about/"><p>About</p></a>
+            <a href="pages/about/"><p>About</p></a>
 
         </nav>
         <!-- /NAVIGATION BUTTON -->
@@ -91,7 +91,7 @@
                     <!-- ANIMATION CONTAINER -->
                     <div class="animation-container animation-fade-left" data-animation-delay="200"> 
                        
-                        <p class="subline"><a class="scroll-down"><i class="fa fa-solid fa-angle-down"></i> Scroll down <i class="fa fa-solid fa-angle-down"></i></a></p>
+                        <p class="subline"><a class="scroll-down" data-target=".portfolio"><i class="fa fa-solid fa-angle-down"></i> Scroll down <i class="fa fa-solid fa-angle-down"></i></a></p>
                         
                     </div>
                     <!-- /ANIMATION CONTAINER -->
@@ -128,7 +128,7 @@
         
         
         <!-- PORTFOLIO -->
-        <main class="portfolio" class="portfolio">
+        <main class="portfolio">
             <h1 class="section-title">Portfolio</h1>
             
             <!-- ITEM -->
@@ -136,7 +136,10 @@
                 <a class="item scroll-animated-from-bottom" href="portfolio-item-a.html">
                     <h1 class="item-title" aria-hidden="true">VRhythm</h1>
                     <i class="fa fa-eye" aria-hidden="true"></i>
-                    <div class="item-cover" style="background-image: url(portfolio/projects/vrhythm/assets/bg.png)"></div>
+                    <div>
+                        <!-- Alt text in aria-label for accessibility purposes -->
+                        <span class="item-cover" style="background-image: url(pages/portfolio/projects/vrhythm/assets/bg.png)" role="img" aria-label="First-person view of a virtual reality environment seen in the 'Performance mode' of the virtual reality drumming simulator VRhythm. In front of the user, a virtual drumset can be seen, on a stage in the middle of a huge crowd. Just above the drumset, a panel can be seen with the song '2 Tales of the Working Class' and a button that says 'Start game'"></span>
+                    </div>
                     
                 </a>
             </section>
@@ -148,7 +151,10 @@
                 <a class="item scroll-animated-from-bottom" href="portfolio-item-b.html">
                     <h1 class="item-title" aria-hidden="true">Cameriere</h1>
                     <i class="fa fa-eye" aria-hidden="true"></i>
-                    <div class="item-cover" style="background-image: url(portfolio/projects/cameriere/assets/bg.png)"></div>
+                    <div>
+                        <!-- Alt text in aria-label for accessibility purposes -->
+                        <span class="item-cover" style="background-image: url(pages/portfolio/projects/cameriere/assets/bg.png)" role="img" aria-label="Side view of a virtual, pixelated corridor with a hotel waiter walking towards a room with a platter. On the top-left, a bar with the label 'Energia' is depleting, in the middle a text that says 'Secondo piano, terza camera' can be found, and in the top-right, a score counter can be found, with the label 'Punteggio'"> </span>
+                    </div>
                     
                 </a>
             </section>
@@ -160,7 +166,10 @@
                 <a class="item scroll-animated-from-bottom" href="portfolio-item-a.html">
                     <h1 class="item-title" aria-hidden="true">DR Study</h1>
                     <i class="fa fa-eye" aria-hidden="true"></i>
-                    <div class="item-cover" style="background-image: url(portfolio/projects/drstudy/assets/bg.png)"></div>
+                    <div>
+                        <!-- Alt text in aria-label for accessibility purposes -->
+                        <span class="item-cover" style="background-image: url(pages/portfolio/projects/drstudy/assets/bg.png)" role="img" aria-label="Setup for the user study of my bachelor thesis: three computer monitors on a desk, turned-off, each overlayed a different image. The left monitor shows a close-up of two hands clasped together, the middle monitor displays a simple panel with a button and text that reads 'Please press the button and wait', and the right monitor shows a man and a woman standing side-by-side."></span>
+                    </div>
                     
                 </a>
             </section>
@@ -172,8 +181,11 @@
                 <a class="item scroll-animated-from-bottom" href="portfolio-item-b.html">
                     <h1 class="item-title" aria-hidden="true">scribble</h1>
                     <i class="fa fa-eye" aria-hidden="true"></i>
-                    <div class="item-cover" style="background-image: url(portfolio/projects/scribble/assets/bg.png)"></div>
-                    
+                    <div>
+                        <!-- Alt text inside aria-label for accessibility purposes -->
+                        <span class="item-cover" style="background-image: url(pages/portfolio/projects/scribble/assets/bg.png)" role="img" aria-label="A desktop environment with four windows: three Java applications at the top, and a PowerShell terminal at the bottom. The three Java application windows have a black cross drawn at the top. The first one on the left has a text saying 'Parola: croce' at the top, while the other two say 'Indovina la parola per primo. The second one has a red text at the bottom saying 'La parola inserita 'religione' è sbagliata', and a button on the top right says 'Send Word'. The third and final one contains a textbox at the top with the text 'croce'. The PowerShell terminal at the bottom says 'Server avviato correttamente, attualmente in ascolto sulla porta 5002'."></span>
+                    </div>
+
                 </a>
             </section>
             <!-- /ITEM -->
@@ -186,7 +198,11 @@
                     <h1 class="item-title">Others</h1>
                     <p class="portfolio-paragraph">Image by Gerd Altmann from Pixabay</p>
                     <i class="fa fa-eye" aria-hidden="true"></i>
-                    <div class="item-cover" style="background-image: url(portfolio/projects/others/assets/bg.jpg)"></div>
+                    <div>
+                        <!-- Alt text inside aria-label for accessibility purposes -->
+                        <span class="item-cover" style="background-image: url(pages/portfolio/projects/others/assets/bg.jpg)" role="img" aria-label="Many hands from people out-of-frame pointing to the words 'The others' written in chalk n a blackboard."> </span>
+                    </div>
+
                 </a>
             </section>
             <!-- /ITEM -->

@@ -44,8 +44,11 @@ jQuery(document).ready(function($) {
         
     });
 
-    $(".scroll-down").click(function() {
-        $("html, body").animate({ scrollTop: $(".portfolio").offset().top }, 800);
+    $(".scroll-down").click(function(e) {
+        const targetSelector = $(e.currentTarget).data('target');
+        const target = $(targetSelector);
+        if (target.length > 0)
+            $("html, body").animate({ scrollTop: target.offset().top }, 800);
         return false;
     });
     

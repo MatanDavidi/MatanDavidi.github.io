@@ -545,6 +545,13 @@ a:hover
     opacity: 0;
 }
 
+.bio .item-title, .bio .item-title-detail-selector {
+    text-align: center;
+    font-size: 7rem;
+
+    background-color: rgba(30, 30, 30, 0.4);
+}
+
 .portfolio .item:before
 {
     display: block;
@@ -726,6 +733,11 @@ a:hover
 .about h6
 {
     margin-bottom: .6em;
+}
+
+.standout {
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 
