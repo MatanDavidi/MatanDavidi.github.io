@@ -1,3 +1,14 @@
+/* Helper methods stolen from https://css-tricks.com/viewport-sized-typography/ */
+function vh(percent) {
+    let h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    return (percent * h) / 100;
+}
+
+function vw(percent) {
+    let w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    return (percent * w) / 100;
+}
+
 jQuery(window).on('load', function() {
         
     // HIDE PRELAODER
@@ -47,8 +58,14 @@ jQuery(document).ready(function($) {
     $(".scroll-down").click(function(e) {
         const targetSelector = $(e.currentTarget).data('target');
         const target = $(targetSelector);
-        if (target.length > 0)
-            $("html, body").animate({ scrollTop: target.offset().top }, 800);
+        if (target.length > 0) {
+            const animatedScrollAmount = vh(20);
+            let targetOffset = target.offset().top;
+            if (parseFloat(target.css("opacity")) < 0.01) {
+                targetOffset -= animatedScrollAmount;
+            }            
+            $("html, body").animate({ scrollTop: targetOffset }, 800);
+        }
         return false;
     });
     
@@ -62,7 +79,7 @@ jQuery(document).ready(function($) {
         rotate: { x: 0, y: 0, z: 0 },
         opacity: 0,
         distance: "20vh",
-        viewFactor: 0.4,
+        viewFactor: 0.1,
         scale: 1,
         useDelay: 'onload',
     });
@@ -74,7 +91,7 @@ jQuery(document).ready(function($) {
         rotate: { x: 0, y: 0, z: 0 },
         opacity: 0,
         distance: "20vh",
-        viewFactor: 0.4,
+        viewFactor: 0.1,
         scale: 1,
         useDelay: 'onload',
     });

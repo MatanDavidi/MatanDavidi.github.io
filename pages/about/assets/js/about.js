@@ -13,10 +13,15 @@ function toggleDetailLevelContent(relativeCheckbox) {
     }
 }
 
+$(function(){
+    $('.timeline').timeline({
+        mode: 'horizontal'
+    });  
+  });
+  
+
 $(document).ready(() => {
     $(".switch input[type='checkbox']").each((_, relativeCheckbox) => {
-        console.log(relativeCheckbox);
-        
         toggleDetailLevelContent($(relativeCheckbox));
     });
 });
