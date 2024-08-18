@@ -790,6 +790,10 @@ a:hover
 
 .portfolio-item-header {
     margin: 10rem 0 5rem 0;
+
+    .portfolio-item-description {
+        line-height: initial;
+    }
 }
 
 .portfolio-item-a
