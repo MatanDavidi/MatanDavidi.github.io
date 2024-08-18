@@ -493,20 +493,42 @@ a:hover
     background: #111;
 }
 
-.hero .background-content .background-img
+.hero .background-content 
 {
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
+    .background-img {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
 
-    width: 100%;
-    height: 100%;
+        width: 100%;
+        height: 100%;
 
-    background: url(../img/background_code.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+        background: url(../img/background_code.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .cameriere-background-img {
+        background: url(../../pages/portfolio/projects/cameriere/assets/bg.png);
+    }
+
+    .drstudy-background-img {
+        background: url(../../pages/portfolio/projects/drstudy/assets/bg.png);
+    }
+
+    .others-background-img {
+        background: url(../../pages/portfolio/projects/others/assets/bg.png);
+    }
+
+    .scribble-background-img {
+        background: url(../../pages/portfolio/projects/scribble/assets/bg.png);
+    }
+
+    .vrhythm-background-img {
+        background: url(../../pages/portfolio/projects/vrhythm/assets/bg.png);
+    }
 }
 
 
@@ -721,7 +743,7 @@ a:hover
     margin-bottom: 1.6em;
 }
 
-.about .social-links
+.social-links
 {
     margin: 3rem 0 4rem 0;
     padding: 0;
@@ -729,13 +751,27 @@ a:hover
     list-style: none;
 }
 
-.about .social-links li
+.social-links li
 {
     font-size: 2rem;
 
     display: inline-block;
 
     margin-right: 1em;
+}
+
+@media (max-width: 700px) {
+    ul.social-links {
+        width: 100%;
+        display: table;
+        table-layout: fixed;
+    }
+
+    ul.social-links li {
+        display: table-cell;
+        width: auto;
+        text-align: center;        
+    }
 }
 
 .about h6
@@ -752,44 +788,71 @@ a:hover
 /** 9. Page --> Portfolio Item Type A
 *******************************************************************/
 
+.portfolio-item-header {
+    margin: 10rem 0 5rem 0;
+}
+
 .portfolio-item-a
 {
     margin: 20rem 0 0 0;
-}
 
-.portfolio-item-a .container-fluid
-{
-    max-width: 900px;
-    padding: 0 30px;
-}
+    .container-fluid
+    {
+        max-width: 900px;
+        padding: 0 30px;
+    }
 
-.portfolio-item-a h1
-{
-    margin-bottom: .25em;
-}
+    h1
+    {
+        margin-bottom: .25em;
+    }
 
-.portfolio-item-a h4
-{
-    margin-bottom: 1.8em;
-}
+    h4
+    {
+        margin-bottom: 1.8em;
+    }
 
-.portfolio-item-a p
-{
-    line-height: 2.4em;
+    p
+    {
+        line-height: 2.4em;
+        margin-bottom: 1.6em;
+    }
 
-    margin-bottom: 1.6em;
-}
+    .image-carousel
+    {
+        margin-top: 6rem;
 
-.portfolio-item-a .image-carousel
-{
-    margin-top: 6rem;
-}
+        .img-responsive {
+            display: flex;
+            align-items: stretch;
+            flex-direction: column;
+        }
 
+        .owl-stage {
+            display: flex;
+            height: 100%;
+        }
 
-.portfolio-item-a .image-carousel .owl-item
-{
-    border: 5px solid #fff;
-    border-left: none;
+        .owl-item
+        {
+            display: flex;
+            border: 5px solid #fff;
+            border-left: none;
+        }
+
+        .caption {
+            display: flex;
+            align-items: center;
+            color: aliceblue;
+            font-style: italic;
+            padding: 2px;
+            height: 100%;
+
+            .image-number {
+                font-weight: bold;
+            }
+        }
+    }
 }
 
 
