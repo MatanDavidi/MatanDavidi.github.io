@@ -1,0 +1,15 @@
+.drstudy-carousel img {
+    height: 500px;
+    width: auto;
+    object-fit: contain;
+}
+
+.portfolio-item-a {
+    & .image-carousel {
+      & .owl-item {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+    }
+}
