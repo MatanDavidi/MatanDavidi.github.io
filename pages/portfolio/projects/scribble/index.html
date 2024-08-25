@@ -1,11 +1,200 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matan Davidi | Portfolio - scribble</title>
-</head>
-<body>
-    <h1>scribble works!</h1>
-</body>
+   
+   
+    <head>
+
+
+        <!-- META -->
+        <meta charset="utf-8">
+        <meta name="robots" content="noodp">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <!-- PAGE TITLE -->
+        <title>Matan Davidi | Portfolio - scribble</title>
+
+        <!-- FAVICON -->
+        <link rel="apple-touch-icon" sizes="120x120" href="../../../../assets/img/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../../../../assets/img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../../../../assets/img/favicon/favicon-16x16.png">
+        <link rel="manifest" href="../../../../assets/img/favicon/site.webmanifest">
+        <link rel="mask-icon" href="../../../../assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="../../../../assets/img/favicon/favicon.ico">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-config" content="../../../../assets/img/favicon/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+
+        <!-- FONTS -->
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900&amp;subset=latin-ext" rel="stylesheet">
+
+        <!-- STYLESHEETS -->
+        <link rel="stylesheet" type="text/css" href="../../../../assets/css/plugins.css">
+        <link rel="stylesheet" type="text/css" href="../../../../assets/css/main.css">
+        <link rel="stylesheet" type="text/css" href="../assets/css/portfolio_projects.css">
+
+
+    </head>
+
+
+    <body class="contains-hero sub-page">
+       
+        <!-- PRELOADER -->
+        <div class="preloader">
+           
+           
+            <!-- SPINNER -->
+            <div class="spinner">
+             
+             
+              <div class="bounce-1"></div>
+              <div class="bounce-2"></div>
+              <div class="bounce-3"></div>
+              
+              
+            </div>
+            <!-- /SPINNER -->
+            
+            
+        </div>
+        <!-- /PRELOADER -->
+        
+        
+        <!-- NAVIGATION BUTTON -->
+        <div class="navigation-button">
+
+            <a href="../../../../"><p>Back</p></a>
+
+        </div>
+        <!-- /NAVIGATION BUTTON -->
+        
+        <!-- PORTFOLIO ITEM TYPE A -->
+        <div class="portfolio-item-a">
+            
+            <header class="header hero portfolio-item-header">
+
+                <!-- CONTAINER FLUID -->
+                <div class="front-content">
+
+                    <div class="container-fluid animation-container scroll-animated-from-top">
+
+                        <h1 class="scroll-animated-from-bottom">scribble</h1>
+                    
+                        <h4 class="scroll-animated-from-bottom">Unleash your inner artist and guess your way to victory!</h4>
+                        
+                        <p class="scroll-animated-from-bottom">
+                            Created over a 12-week period from March to May 2019 for a final project for the entire class in the Module 226B course, 
+                            <a href="https://www.ict-berufsbildung.ch/resources/Bildungsplan_Informatik-EFZ_Betriebsinformatik_BiVo-2014_IT.pdf">"Object-oriented implementation" (Implementare orientato oggetti)</a>, 
+                            scribble is a Pictionary-inspired online multiplayer game designed for 2 or more players written in vanilla Java that offers 
+                            a platform where players can draw and guess words in real-time.<br>
+                            The game is based on a server-client architecture, which communicate by sending UDP datagrams back and forth.
+                        </p>
+
+                        <!-- LINKS -->
+                        <ul class="scroll-animated-from-bottom social-links">
+                        
+                            <li><a href="https://github.com/MatanDavidi/scribble-public"><i class="fa fa-github"></i>Source code</a></li>
+                        
+                        </ul>
+                        <!-- LINKS -->
+
+                    </div>
+                    
+                
+                </div>
+                <!-- CONTAINER FLUID -->
+                <!-- BACKGROUND CONTENT -->
+                <div class="background-content parallax-on">
+                    
+                    
+                    <!-- BACKGROUND CONTENT INNER -->
+                    <div class="background-content-inner">
+
+                        <div class="background-overlay"></div>
+                        <div class="background-img scribble-background-img layer" data-depth="0.05"></div>
+                    
+                    </div>
+                    <!-- /BACKGROUND CONTENT INNER -->
+                    
+                    
+                </div>
+                <!-- /BACKGROUND CONTENT -->
+
+            </header>
+            
+            
+            <!-- IMAGE CAROUSEL -->
+            <div class="image-carousel short-carousel owl-carousel scroll-animated-from-bottom">
+
+                <div class="img-responsive">
+                    <img src="assets/pre_game.png" alt="image">
+                    <figcaption class="caption">
+                        <span>
+                            <span class="image-number">Image 1</span> | Compilation of different windows that show the states
+                            of the application before starting a game. The first image (top-left) shows a welcome screen ("Welcome to scribble - Click to start"),
+                            the second panel shows the username input screen ("Insert your username:" at the top and "Access" at the bottom). The third window is 
+                            the lobby in which each player can see how many others have joined ("Waiting for other players...").
+                        </span>
+                    </figcaption>
+                </div>
+
+                <div class="img-responsive">
+                    <img src="assets/game.png" alt="image">
+                    <figcaption class="caption">
+                        <span>
+                            <span class="image-number">Image 2</span> | View of the two roles inside the game, after its start. One player is randomly picked as the
+                            artist (in this case Player1), who has to draw the word indicated at the top ("Word: wine"). They may, naturally, not attempt to guess this word.
+                            The other players (in this case Player2 and Player3) are designated as guessers. Their objective is to attempt to guess which word the artist is
+                            drawing (the text at the top reads, in fact, "Be the first to guess the word"), and input it in the text box at the top right (see rightmost panel).
+                            In Player2's panel (center), it is possible to see a red text that says "The inserted word ‘bottle’ is wrong." This text appears whenever one of
+                            the guessers sends a wrong word, as feedback to let them know it was incorrect.
+                        </span>
+                    </figcaption>
+                </div>
+
+                <div class="img-responsive">
+                    <img src="assets/post_game.png" alt="image">
+                    <figcaption class="caption">
+                        <span>
+                            <span class="image-number">Image 3</span> | Final view of the game after one of the players guessed the word correctly. It is equal amongst all players:
+                            "THE WORD HAS BEEN GUESSED! // The word was: wine // Winner: Player3". The button at the bottom says "Play Again", and brings the player back to the 
+                            username input screen (see Image 1).
+                        </span>
+                    </figcaption>
+                </div>
+
+            </div>
+            <!-- IMAGE CAROUSEL -->
+            
+
+        </div>
+        <!-- /PORTFOLIO ITEM TYPE A -->
+        
+        
+        <!-- FOOTER -->
+        <div class="footer">
+            
+            
+            <!-- FOOTER INNER -->
+            <div class="footer-inner scroll-animated-from-bottom">
+
+                <p>© 2024 Matan Davidi | Design by <a href="https://templatefoundation.com">Template Foundation</a></p>
+                <i class="fa fa-angle-double-up scroll-top" aria-hidden="true"></i>
+            
+            </div>
+            <!-- /FOOTER INNER -->
+            
+
+        </div>
+        <!-- /FOOTER -->
+
+
+        <!-- JAVASCRIPTS -->
+        <script type="text/javascript" src="../../../../assets/js/plugins.js"></script>
+        <script type="text/javascript" src="../../../../assets/js/main.js"></script>
+
+
+    </body> 
+    
+    
 </html>
