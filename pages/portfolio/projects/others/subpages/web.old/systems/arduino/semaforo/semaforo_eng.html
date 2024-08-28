@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="semaforostyle.css">
+		<title>Arduino - Traffic Light</title>
+		<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
+		<meta name="author" content="Matan Davidi">
+	  	<meta name="keywords" content="Arduino, Traffic Light, Electronics, Digital">
+	    <meta name="date" content="20.03.2018">
+	    <meta charset="utf-8">
+	</head>
+	<body>
+		<div>
+		    <a href="../../../index.html">Return to home</a>
+			<h1>Arduino - Traffic Light</h1>
+			<h3>Description</h3>
+			<p>This electronic circuit simulates two traffic lights: one for pedestrians and one for cars.</p>
+			<p>This is done using an Arduino and two groups of three LEDs: red, yellow, and green, which light up at regular intervals.</p>
+			<p>Additionally, there is a switch to turn on the green LED for pedestrians only after the car's light has turned red.</p>
+			<p>The button state (pressed / not pressed) is represented by a blue LED next to it that lights up and stays on as soon as it is pressed.</p>
+			<p>The car intervals last as follows:</p>
+			<h4>Cars:</h4>
+			<p>Red: 7 seconds,</p>
+			<p>Yellow: 3 seconds,</p>
+			<p>Green: 3 seconds,</p>
+			<p>Yellow: 3 seconds.</p>
+			<h4>Pedestrians:</h4>
+			<p>Red: 7 seconds,</p>
+			<p>Green: 20 seconds,</p>
+			<p>Yellow: 10 seconds.</p>
+			<hr>
+			<h3>Materials</h3>
+			<ul>
+				<li>Arduino Mega 2560</li>
+				<li>2 Red LEDs</li>
+				<li>2 Yellow LEDs</li>
+				<li>2 Green LEDs</li>
+				<li>1 Blue LED</li>
+				<li>1 Button</li>
+				<li>7 330 Ω Resistors</li>
+				<li>1 1 kΩ Resistor</li>
+			</ul>
+			<hr>
+			<h3>Diagram</h3>
+			<p>
+				<a href="https://www.tinkercad.com/things/evGXZkAKVfx-traffic-lights/editel?sharecode=hzTozqWE3_fIy6_zvqph8K8W2j8F3-EUnIHkyEXkWto=">View Original</a>
+			</p>
+			<p>
+				<p>Graphical diagram:</p>
+				<img src="img/Semaforo.png" alt="Graphical diagram">
+				<p>Circuit diagram:</p>
+				<img src="img/Semaforo_schema.svg" alt="Circuit diagram">
+			</p>
+			<a href="semaforo.txt">
+				<h3>Code</h3>
+			</a>
+			<hr>
+		</div>
+</body>
+</html>

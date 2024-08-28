@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+	
+<!-- Mirrored from samtinfo.ch/i16davmat/web.old/systems/arduino/semaforo/semaforo.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Aug 2024 11:38:21 GMT -->
+<head>
+		<link rel="stylesheet" type="text/css" href="semaforostyle.css">
+		<title>Arduino - Semaforo</title>
+		<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
+		<meta name="author" content="Matan Davidi">
+	  	<meta name="keywords" content="Arduino, Semaforo, Elettronica, Digitale">
+	    <meta name="date" content="20.03.2018">
+	    <meta charset="utf-8">
+	</head>
+	<body>
+		<div>
+		    <a href="../../../index.html">Torna alla home</a>
+			<h1>Arduino - Semaforo</h1>
+			<h3>Descrizione</h3>
+			<p>Questo circuito elettronico simula due semafori: uno per i pedoni e uno per le automobili.</p>
+			<p>Questo viene fatto tramite un Arduino e due gruppi di tre LED: rosso, giallo e verde, che si accendono a intervalli regolari.</p>
+			<p>Inoltre, è presente un interruttore per far accendere il LED verde dei pedoni unicamente una volta che quello delle automobili è passato al rosso.</p>
+			<p>Lo stato del pulsante (premuto / non premuto) è rappresentato da un LED blu vicino ad esso che si accende e rimane acceso appena viene premuto.</p>
+			<p>Gli intervalli delle automobili durano quanto segue:</p>
+			<h4>Automobili:</h4>
+			<p>Rosso: 7 secondi,</p>
+			<p>Giallo: 3 secondi,</p>
+			<p>Verde: 3 secondi,</p>
+			<p>Giallo: 3 secondi.</p>
+			<h4>Pedoni:</h4>
+			<p>Rosso: 7 secondi,</p>
+			<p>Verde: 20 secondi,</p>
+			<p>Giallo: 10 secondi.</p>
+			<hr>
+			<h3>Materiale</h3>
+			<ul>
+				<li>Arduino Mega 2560</li>
+				<li>2 LED Rossi</li>
+				<li>2 LED Gialli</li>
+				<li>2 LED Verdi</li>
+				<li>1 LED Blu</li>
+				<li>1 Pulsante</li>
+				<li>7 Resistenze da 330 Ω</li>
+				<li>1 Resistenza da 1 kΩ</li>
+			</ul>
+			<hr>
+			<h3>Schema</h3>
+			<p>
+				<a href="https://www.tinkercad.com/things/evGXZkAKVfx-traffic-lights/editel?sharecode=hzTozqWE3_fIy6_zvqph8K8W2j8F3-EUnIHkyEXkWto=">Vedi Originale</a>
+			</p>
+			<p>
+				<p>Schema grafico:</p>
+				<img src="img/Semaforo.png" alt="Schema grafico">
+				<p>Schema elettrico:</p>
+				<img src="img/Semaforo_schema.svg" alt="Schema elettrico">
+			</p>
+			<a href="semaforo.txt">
+				<h3>Codice</h3>
+			</a>
+			<hr><!--
+			<h3>Codice</h3>
+			
+			
+			<pre>		
+				//Declare some constants and variables
+				const int pedestrianRedPin = 8;    // pin that the red pedestrian LED is connected to
+				const int pedestrianYellowPin = 12; // pin that the yellow pedestrian LED is connected to
+				const int pedestrianGreenPin = 13;  // pin that the green pedestrian LED is connected to
+
+				const int carRedPin = 2;  // pin that the red car LED is connected to
+				const int carYellowPin = 4; // pin that the yellow car LED is connected to
+				const int carGreenPin = 7;  // pin that the green car LED is connected to
+
+				const int buttPin = 3;  //pin that the push button is connected to
+				const int buttLed = 5;  //pin that the LED representing the state of the push button is connected to
+				int buttState = LOW;  //variable that represent the state of the push button's LED (ON/OFF) - Default: OFF.
+
+
+
+				void setup() {
+				  
+				  //All pins connected to LEDs have to be set to OUTPUT. 
+				  pinMode(pedestrianRedPin, OUTPUT);
+				  pinMode(pedestrianYellowPin, OUTPUT);
+				  pinMode(pedestrianGreenPin, OUTPUT);
+				  
+				  pinMode(carRedPin, OUTPUT);
+				  pinMode(carYellowPin, OUTPUT);
+				  pinMode(carGreenPin, OUTPUT);
+				  
+				  //Set the pin connected to the push button to INPUT.
+				  pinMode(buttPin, INPUT);
+				  //Set the pin connected to the push button's LED to OUTPUT.
+				  pinMode(buttLed, OUTPUT);
+				}
+
+				void loop() {
+				  
+				  //CARS
+				  //Turn on car's red light
+				  digitalWrite(carRedPin, HIGH);
+				  //Turn on pedestrian's red light
+				  digitalWrite(pedestrianRedPin, HIGH);
+				 
+				  //Delay of 700 * 10 = 7000 ms
+				  for(int i = 0; i < 700; i++) {
+				  
+				    //10 ms of delay
+				    delay(10);
+				    
+				    //Check if the button is pressed
+				    if (digitalRead(buttPin)) {
+				    
+				      //Change state of the LED
+				      buttState = HIGH;
+				    
+				    }
+				    
+				    //Turn on or leave off the push button's LED.
+				    digitalWrite(buttLed, buttState);
+				    
+				  }
+				    
+				  //Turn on car's yellow light
+				  digitalWrite(carYellowPin, HIGH);
+				  
+				  //Delay of 300 * 10 = 3000 ms
+				  for(int i = 0; i < 300; i++) {
+				  
+				    //10 ms of delay
+				    delay(10);
+				    
+				    //Check if the button is pressed
+				    if (digitalRead(buttPin)) {
+				    
+				      //Change state of the LED
+				        buttState = HIGH;
+				    
+				    }
+				    
+				    //Turn on or leave off the push button's LED.
+				    digitalWrite(buttLed, buttState);
+				    
+				  }
+				  //Turn off car's red light  
+				  digitalWrite(carRedPin, LOW);
+				  //Turn off car's yellow light
+				  digitalWrite(carYellowPin, LOW);
+				  //Turn on car's green light
+				  digitalWrite(carGreenPin, HIGH);
+				  
+				  //Delay of 300 * 10 = 3000 ms
+				  for(int i = 0; i < 300; i++) {
+				  
+				    //10 ms of delay
+				    delay(10);
+				    
+				    //Check if the button is pressed
+				    if (digitalRead(buttPin)) {
+				    
+				      //Change state of the LED 
+				        buttState = HIGH;
+				    
+				    }
+				    
+				    //Turn on or leave off the push button's LED.
+				    digitalWrite(buttLed, buttState);
+				    
+				  }
+				    
+				  //Turn off car's green light
+				  digitalWrite(carGreenPin, LOW);
+				  //Turn on car's yellow light
+				  digitalWrite(carYellowPin, HIGH);
+				  
+				  //Delay of 300 * 10 = 3000 ms
+				  for(int i = 0; i < 300; i++) {
+				  
+				    //10 ms of delay
+				    delay(10);
+				    
+				    //Check if the button is pressed
+				    if (digitalRead(buttPin)) {
+				    
+				        //Change state of the LED
+				      buttState = HIGH;
+				    
+				    }
+				    
+				    //Turn on or leave off the push button's LED.
+				    digitalWrite(buttLed, buttState);
+				    
+				  }
+				    
+				  //Turn off car's yellow light
+				  digitalWrite(carYellowPin, LOW);
+				  //Turn on car's red light
+				  digitalWrite(carRedPin, HIGH);
+				  
+				  //Delay of 700 * 10 = 7000 ms
+				  for(int i = 0; i < 700; i++) {
+				  
+				  //10 ms of delay
+				    delay(10);
+				    
+				    //Check if the button is pressed
+				  if (digitalRead(buttPin)) {
+				    
+				        //Change state of the LED
+				    buttState = HIGH;
+				    
+				    }
+				    
+				    //Turn on or leave off the push button's LED.
+				    digitalWrite(buttLed, buttState);
+				    
+				  }
+				    
+				  //PEDESTRIANS
+
+				  //Check if the push button has been pushed
+				  if (buttState) {
+
+				    //Change the state of the push button's LED to OFF.
+				    buttState = LOW;
+				    //Turn off pedestrian's red light
+				    digitalWrite(pedestrianRedPin, LOW);
+				    //Turn on pedestrian's green light
+				    digitalWrite(pedestrianGreenPin, HIGH);
+				    
+				    //Turn off push button's LED
+				    digitalWrite(buttLed, buttState);
+				    
+				    //Delay of 20000 ms = 20s
+				    delay(20000);
+				  
+				    //Turn off pedestrian's green light
+				    digitalWrite(pedestrianGreenPin, LOW);
+				    //Turn on pedestrian's yellow light
+				    digitalWrite(pedestrianYellowPin, HIGH);
+				    
+				    //Delay of 1000 * 10 = 10000 ms
+				    for(int i = 0; i < 1000; i++) {
+				    
+				      //10 ms of delay
+				      delay(10);
+				      
+				      //Check if the button is pressed
+				      if (digitalRead(buttPin)) {
+				      
+				        //Change state of the LED
+				        buttState = HIGH;
+				      
+				      }
+				      //Turn on or leave off the push button's LED.
+				      digitalWrite(buttLed, buttState);
+				      
+				    }
+				     
+				    //Turn off pedestrian's yellow light
+				    digitalWrite(pedestrianYellowPin, LOW);
+				    
+				    //Check if the button is pressed
+				    if (digitalRead(buttPin)) {
+				      
+				      //Change state of the LED
+				      buttState = HIGH;
+				      
+				    }
+				    //Turn on or leave off the push button's LED.
+				    digitalWrite(buttLed, buttState);
+				  
+				  }
+				  
+				} 
+			</pre> -->
+		</div>
+</body>
+
+<!-- Mirrored from samtinfo.ch/i16davmat/web.old/systems/arduino/semaforo/semaforo.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Aug 2024 11:38:22 GMT -->
+</html>

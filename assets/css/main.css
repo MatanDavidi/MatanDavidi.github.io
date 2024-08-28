@@ -182,7 +182,9 @@ a:hover
     }
 }
 
-
+.nowrap {
+    text-wrap: nowrap;
+}
 
 /** 2. Preloader
 *******************************************************************/
@@ -482,7 +484,7 @@ a:hover
     }
 
     .others-background-img {
-        background-image: url(../../pages/portfolio/projects/others/assets/bg.png);
+        background-image: url(../../pages/portfolio/projects/others/assets/bg.jpg);
     }
 
     & .scribble-background-img {

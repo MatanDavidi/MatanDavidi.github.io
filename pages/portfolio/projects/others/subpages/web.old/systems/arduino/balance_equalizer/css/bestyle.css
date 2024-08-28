@@ -1,0 +1,53 @@
+pre {
+
+	font-family: monospace;
+
+}	
+
+img {
+
+	max-width: 858px;
+	max-height: 500px;
+
+}
+
+input[type="button"] {
+
+	background-color: #555555; /* Black */
+	border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+	font-size: 24px;
+	padding: 16px;
+	border-radius: 8px;
+	-webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+	cursor: pointer;
+
+}
+
+input[type="button"]:hover {
+
+	background-color: white;
+	color: #555555;
+	border: 1px #555555 solid;
+
+}
+
+active {
+
+	background-color: white;
+	color: #555555;
+	border: 1px #555555 solid;
+
+}
+
+.selector {
+
+	margin: auto;
+	width: -moz-fit-content;
+	width: fit-content;
+
+}

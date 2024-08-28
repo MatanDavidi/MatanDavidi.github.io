@@ -1,0 +1,114 @@
+body {
+
+	color: #525252;
+
+}
+
+td {
+
+	border: 1px solid grey;
+	text-align: center;
+
+}
+
+tr {
+
+	padding: 15%;
+
+}
+
+table {
+
+	margin-top: 8%;
+
+}
+
+#cellTable {
+
+
+	width: 30%;
+	display: inline-table;
+	position: relative;
+	left: 1%;
+
+}
+
+#starTable {
+
+	width: 30%;
+	display: inline-table;
+	position: relative;
+	left: 39%;
+
+}
+
+.selectable:hover {
+
+	background-color: lightgrey;
+
+}
+
+#extraction {
+
+	display: none;
+
+}
+
+#selectedCellsTable, #selectedStarsTable {
+
+	display: none;
+
+}
+
+#selectedCellsTable tr {
+
+	background-color: orange;
+
+}
+
+#selectedStarsTable tr {
+
+	background-color: lime;
+
+}
+
+#extRes {
+
+	width: 100%;
+	border-collapse: collapse;
+
+}
+
+#extRes * {
+
+	border: 1px solid;
+
+}
+
+b {
+
+	font-weight: bold;
+	color: orange;
+
+}
+
+i {
+
+	font-weight: bold;
+	font-style: normal;
+	color: lime;
+
+}
+
+#selected #selectedCellsTable, #selected #selectedStarsTable {
+
+	width: 50%;
+
+}
+
+#extraction {
+
+	width: 100%;
+	margin-top: 1%;
+
+}

@@ -1,0 +1,93 @@
+#programmi input[type="button"] {
+
+	background-color: white; 
+    color: black; 
+    border: 1px solid #4CAF50;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+
+    cursor: pointer;
+
+}
+
+#programmi input[type="button"]:hover {
+
+	
+	background-color: #4CAF50;
+    color: white;
+
+}
+
+.container input {
+
+    display: block;
+
+}
+
+.container input[type=button] {
+
+    margin-top: 5%;
+
+}
+
+.container form {
+
+    padding: 10%;
+    background-image: url('assets/images/bg_form.png');
+    display: block;
+    border: 1px groove black;
+
+}
+
+#fRegister {
+    float: right;
+
+}
+
+#fLogin {
+    float: left;
+
+}
+
+#cr {
+
+    font-size: 100%;
+
+}
+
+@media screen and (max-width: 400px) {
+    
+    #fLogin { 
+
+     float: none;
+     margin-right: 0;
+     width: auto;
+     border: 0;
+     margin-bottom: 10px;
+
+    }
+
+    #fRegister { 
+
+        float: none;
+        margin-right: 0;
+        width: auto;
+        border: 0;
+        margin-top: 10px;
+
+    }
+
+    #cr {
+
+        font-size: 71%;
+
+    }
+
+ }

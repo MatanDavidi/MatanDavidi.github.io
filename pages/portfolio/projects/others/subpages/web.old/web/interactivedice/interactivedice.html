@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	
+<!-- Mirrored from samtinfo.ch/i16davmat/web.old/web/interactivedice/interactivedice.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Aug 2024 11:37:46 GMT -->
+<head>
+		<title>Interactive Dice</title>
+		<link rel="stylesheet" type="text/css" href="idstyle.css">
+		<script type="text/javascript" src="idscript.js"></script>
+		<meta charset="utf-8">
+
+		<meta name="author" content="Matan Davidi">
+  	<meta name="keywords" content="Javascript, Casino, Dice">
+    <meta name="date" content="30.01.2018">
+		<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+	</head>
+	<body>
+		<div class="center" id="center">
+			<p class="tooltip">Inserire la propria data di nascita:</p>
+			<input type="date" name="date" id="date" max="2018-01-30">
+			<input type="submit" onclick="playGame()" name="datesubmit" id="datesubmit">
+		</div>
+		<div class="adultGame" id="adultGame">
+			<p id="betTip">Inserire la propria puntata (Massimo: 50 CHF):</p>
+			<input type="button" onclick="goAllIn()" name="allIn" id="allInButton" value="All in">
+			<input type="number" name="bet" id="bet" value="5" min="5" max="50">
+			<input type="submit" onclick="betSet(document.getElementById('bet').value)" name="datesubmit" id="datesubmit">
+		</div>
+
+		<div class="dice" id="dice">
+			<p> IL TUO RISULTATO: </p>
+			<img class="dice diceResult" id="pDie1"></img>
+			<img class="dice diceResult" id="pDie2"></img>
+			<p> AVVERSARIO: </p>
+			<img class="dice diceResult" id="pcDie1"></img>
+			<img class="dice diceResult" id="pcDie2"></img>
+			<p id="result"></p>
+			<p id="curBudget"></p>
+			<p id="status"></p>
+			<input type="button" name="replay" value="Gioca ancora" onclick="playGame()" id="replay">
+		</div>
+
+		<script type="text/javascript">
+			var today = new Date();
+			var dd = today.getDate();
+			var mm = today.getMonth() + 1;
+			var yyyy = today.getFullYear();
+
+			if (dd < 10) {
+
+				dd = '0' + dd;
+
+			}
+
+			if (mm < 10) {
+
+				mm = '0' + mm;
+
+			}
+
+			today = yyyy + '-' + mm + '-' + dd;
+
+			document.getElementById("date").setAttribute("max", today);
+			document.getElementById("date").setAttribute("value", today);
+		</script>
+		<a style="position: fixed; bottom:5px;right:10px;" href="../../index.html" title="Torna alla home">
+			<img src="img/home.png" style="width: 75px; height: 75px;">
+	 	</a>
+	</body>
+
+<!-- Mirrored from samtinfo.ch/i16davmat/web.old/web/interactivedice/interactivedice.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Aug 2024 11:37:47 GMT -->
+</html>

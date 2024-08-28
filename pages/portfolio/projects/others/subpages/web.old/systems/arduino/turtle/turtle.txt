@@ -1,0 +1,131 @@
+/*
+ Turtle
+
+ This program drives a bipolar stepper motor and a LED bar.
+ The motor is attached to digital pins 8 - 11 of the Arduino.
+ A thumb joystick is connected to analog inputs 0 and 1.
+ The LED bar is connected to digital pins 33, 35, 37, 39, 41, 43, 45, 47, 49, 51 and 53.
+
+ The motor will rotate in a direction dictated by the thumb joystick, forwards = clockwise, backwards = counter-clockwise.
+
+ Created 24 April 2018
+ Modified 08 May 2018
+ by Matan Davidi
+
+ */
+
+#include <Stepper.h>
+
+const int sw_Pin = 2; // digital pin connected to switch output
+const int x_Pin = A0; // analog pin connected to HORZ output
+const int y_Pin = A1; // analog pin connected to VERT output
+
+const int stepsPerRevolution = 48;  // change this to fit the number of steps per revolution
+													          // for your motor: used to be 200, should be 768 but I chose
+                                    // to work with a smaller number
+
+// initialize the stepper library on pins 8 through 11:
+Stepper myStepper = Stepper(stepsPerRevolution, 8, 10, 9, 11);
+
+int stepCount = 0;  // number of steps the motor has taken
+
+// these constants won't change:
+const int ledPins[] = {33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53}; // an array of pin numbers to which LEDs are attached
+
+void setup() {
+  
+  pinMode(sw_Pin, INPUT);
+  digitalWrite(sw_Pin, HIGH);
+  Serial.begin(115200);
+
+	// loop over the pin array and set them all to output:
+  for (int i = 0; i < sizeof(ledPins); i++) {
+    
+  	pinMode(ledPins[i], OUTPUT);
+    
+	}
+  
+}
+
+void loop() {
+  
+  // read the sensor value:
+  int sensorReading = analogRead(x_Pin);
+  
+  // map it to a range from 0 to 100:
+  int motorSpeed = map(sensorReading, 0, 1023, 0, 100);
+  
+  // set the motor speed:
+  if (motorSpeed > 50) {
+
+    Serial.println("Clockwise");
+    myStepper.setSpeed(motorSpeed);
+    myStepper.step(stepsPerRevolution);
+		ledAnimate(true);
+
+  } else if (motorSpeed < 50){
+
+    Serial.println("Counter-clockwise");
+    myStepper.setSpeed(100 - motorSpeed);
+    myStepper.step(-stepsPerRevolution);
+		ledAnimate(false);
+    
+  }
+
+  Serial.print("Switch: ");
+  Serial.print(digitalRead(sw_Pin));
+  Serial.print("\n");
+  Serial.print("X-axis: ");
+  Serial.print(analogRead(x_Pin));
+  Serial.print("\n");
+  Serial.print("Y-axis: ");
+  Serial.println(analogRead(y_Pin));
+  Serial.print("\n");
+  
+  Serial.print("Motor speed: ");
+  Serial.println(motorSpeed);
+  Serial.print("\n");
+  
+}
+
+void ledAnimate(bool isClockwise) {
+
+	if (isClockwise) {
+
+	for(int i = sizeof(ledPins) - 1; i >= 0; i--) {
+   
+  	  if (i < sizeof(ledPins) - 1) {
+     
+			digitalWrite(ledPins[i + 1], LOW); 
+	      
+  	  } else {
+      
+	    	digitalWrite(ledPins[0], LOW);  
+      
+	  	}	
+      
+    	digitalWrite(ledPins[i], HIGH);
+    
+  	}
+
+	} else {
+
+		for(int i = 0; i < sizeof(ledPins); i++) {
+   
+  	  if (i < sizeof(ledPins)) {
+     
+				digitalWrite(ledPins[i - 1], LOW); 
+	      
+  	  } else {
+      
+	    	digitalWrite(ledPins[0], LOW);  
+      
+	  	}	
+      
+    	digitalWrite(ledPins[i], HIGH);
+    
+  	}
+
+	}
+
+}

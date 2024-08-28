@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+	
+<!-- Mirrored from samtinfo.ch/i16davmat/web.old/web/jqueryfirststep/jqueryfirststep.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Aug 2024 11:37:50 GMT -->
+<head>
+		<meta charset="utf-8">
+		<meta name="author" content="w3schools">
+		<meta name="date" content="06.02.18">
+		<meta name="keywords" content="javasript, html, css">
+		<meta name="description" content="test 1 17/18, interactive input with type string, number and date">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  	<title>jQuery First Step</title>
+		<style>
+		* {
+		    box-sizing: border-box;
+		}
+		.row::after {
+		    content: "";
+		    clear: both;
+		    display: block;
+		}
+		[class*="col-"] {
+		    float: left;
+		    padding: 15px;
+		}
+		html {
+		    font-family: "Lucida Sans", sans-serif;
+		}
+		.header {
+		    background-color: #9933cc;
+		    color: #ffffff;
+		    padding: 15px;
+		}
+		.menu ul {
+		    list-style-type: none;
+		    margin: 0;
+		    padding: 0;
+		}
+		.menu li {
+		    padding: 8px;
+		    margin-bottom: 7px;
+		    background-color: #33b5e5;
+		    color: #ffffff;
+		    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+		}
+		.menu li:hover {
+		    background-color: #0099cc;
+		}
+		.aside {
+		    background-color: #33b5e5;
+		    padding: 15px;
+		    color: #ffffff;
+		    text-align: center;
+		    font-size: 14px;
+		    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+		}
+		.footer {
+		    background-color: #0099cc;
+		    color: #ffffff;
+		    text-align: center;
+		    font-size: 12px;
+		    padding: 15px;
+		}
+		/* For desktop: */
+		.col-1 {width: 8.33%;}
+		.col-2 {width: 16.66%;}
+		.col-3 {width: 25%;}
+		.col-4 {width: 33.33%;}
+		.col-5 {width: 41.66%;}
+		.col-6 {width: 50%;}
+		.col-7 {width: 58.33%;}
+		.col-8 {width: 66.66%;}
+		.col-9 {width: 75%;}
+		.col-10 {width: 83.33%;}
+		.col-11 {width: 91.66%;}
+		.col-12 {width: 100%;}
+
+		@media only screen and (max-width: 768px) {
+		    /* For mobile phones: */
+		    [class*="col-"] {
+		        width: 100%;
+		    }
+		}
+
+		#espo {
+
+			display: none;
+
+		}
+
+		#counts {
+
+			display: none;
+
+		}
+
+		#nota {
+
+			font-weight: bold;
+
+		}
+
+		i {
+
+			font-style: normal;
+
+		}
+
+		#nota, #notao, #notaor {
+
+			font-weight: bold;
+			background-color: yellow;
+
+		}
+
+
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script type="text/javascript">
+
+			var old = 0;
+			var notaOld = 0;
+			var notaOlder = 0;
+			var oldTot = 1;
+
+			function footerTime() {
+
+					var today = new Date();
+					var dd = today.getDate();
+					var mm = today.getMonth() + 1;
+					var yyyy = today.getFullYear();
+					var hh = today.getHours();
+					var min = today.getMinutes();
+
+					if (dd < 10) {
+
+						dd = "0" + dd;
+
+					}
+
+					if (mm < 10) {
+
+						mm = "0" + mm;
+
+					}
+
+					if (hh < 10) {
+
+						hh = "0" + hh;
+
+					}
+
+					if (min < 10) {
+
+						min = "0" + min;
+
+					}
+
+					var footer = "" + dd + "." + mm + "." + yyyy + " " + hh + ":" + min;
+
+					$("#data")[0].innerHTML = footer;
+
+			}
+
+			function printPalindrome() {
+
+				$(".aside")[0].innerHTML = "<h2>Palindromo</h2><p>Inserisci del " +
+				"testo composto solo da lettere, spazi, virgole e punti all'interno " +
+				"del rettangolo apposito, clicca sul pulsante \"Palindromo\" e verrà " +
+				"ristampato dapprima normalmente, poi di colore giallo su sfondo nero. " +
+				"In seguito, se il testo inserito è palindromo verrà stampato di colore " +
+				"bianco su sfondo blu, altrimenti di colore rosso e sotto verranno " +
+				"stampati il numero di vocali, consonanti e caratteri speciali che " +
+				"lo compongono.</p>"
+
+				document.getElementById('palindromo').style.display = "block";
+				document.getElementById('Nota').style.display = "none";
+
+				var text = document.getElementById('palindrome').value;
+
+				var check = /[^A-Za-z .,]/g;
+
+				if (!(check.test(text))) {
+
+					if (text != "" && text != " ") {
+
+						document.getElementById('original').innerHTML = text;
+
+						var textForm1 = (text.toLowerCase()).replace(/[ .,]/g, "");
+
+						document.getElementById('form1').style.backgroundColor = "black";
+						document.getElementById('form1').style.color = "yellow";
+
+						document.getElementById('form1').innerHTML = textForm1;
+
+						if (checkPalindrome(textForm1)) {
+
+							document.getElementById('form2').style.backgroundColor = "blue";
+							document.getElementById('form2').style.color = "white";
+							document.getElementById('form2').innerHTML = text;
+							document.getElementById('counts').style.display = "none";
+
+						} else {
+
+							document.getElementById('counts').style.display = "block";
+							document.getElementById('form2').style.backgroundColor = "white";
+							document.getElementById('form2').style.color = "red";
+							document.getElementById('form2').innerHTML = text;
+							document.getElementById('vowels').innerHTML = " " + countVowels(text);
+							document.getElementById('consonants').innerHTML = " " + countConsonants(text);
+							document.getElementById('special').innerHTML = " " + countSpecial(text);
+
+						}
+
+					} else {
+
+						alert("ERRORE: Inserire un testo.");
+						document.getElementById('palindrome').value = "example";
+
+					}
+
+				} else {
+
+					alert("Inserire testo contenente unicamente lettere, spazi, virgole e / o punti.\nTesto inserito: " + text);
+					document.getElementById('palindrome').value = "example";
+
+				}
+
+			}
+
+			function checkPalindrome(string) {
+				return string == string.split("").reverse().join("");
+			}
+
+			function countVowels(string) {
+
+				var vowels = /[aeiou]/gi;
+
+				var toReturn = string.match(vowels);
+
+				return toReturn === null ? 0 : toReturn.length;
+
+			}
+
+			function countConsonants(string) {
+
+				var consonants = /[^aeiou .,]/gi;
+
+				var toReturn = string.match(consonants);
+
+				return toReturn === null ? 0 : toReturn.length;
+
+			}
+
+			function countSpecial(string) {
+
+				var special = /[ .,]/g;
+
+				var toReturn = string.match(special);
+
+				return toReturn === null ? 0 : toReturn.length;
+
+			}
+
+			function calculateGrade() {
+
+				$(".aside")[0].innerHTML = "<h2>Calcola nota</h2><p>Inserisci un " +
+				"numero di punti fatti e uno di punti totali nei rispettivi " +
+				"rettangoli e premi nuovamente sul pulsante \"Calcola nota\" per " +
+				"calcolare la nota derivata dai due. In caso il numero di punti " +
+				"massimi non cambi per un secondo calcolo viene mostrata la nota " +
+				"calcolata in precedente e, in caso di un terzo calcolo " +
+				"consecutivo, anche quella prima.</p>"
+
+				document.getElementById('Nota').style.display = "block";
+				document.getElementById('palindromo').style.display = "none";
+
+				var pfatti = 0;
+				var ptotali = 0;
+
+				var exp = document.getElementById('espo').value;
+				pfatti = document.getElementById('pfatti').value * 1;
+				ptotali = document.getElementById('ptotali').value * 1;
+
+				if (old < 2 && oldTot == ptotali) {
+
+					old++;
+
+				} else if (oldTot != ptotali) {
+
+					old = 0;
+					notaOld = 0;
+					notaOlder = 0;
+
+				}
+
+				oldTot = ptotali;
+
+				if (pfatti > 0 && ptotali > 0) {
+
+					if (pfatti <= ptotali) {
+
+						document.getElementById('fatti').innerHTML = pfatti;
+						document.getElementById('totali').innerHTML = ptotali;
+
+						if (exp.length <= 3 && exp.length > 0) {
+
+							if (exp <= 1 && exp > 0) {
+
+								document.getElementById('exp').innerHTML = exp;
+
+								document.getElementById('notao').innerHTML = Math.round(notaOld * 100) / 100;
+								document.getElementById('notaor').innerHTML = Math.round(notaOlder * 100) / 100;
+
+								var nota = Math.pow((pfatti / ptotali), exp) * 5 + 1;
+
+								switch (old) {
+
+									case 0:
+										notaOld = nota;
+										break;
+
+									case 1:
+										notaOlder = notaOld;
+										notaOld = nota;
+										break;
+
+									case 2:
+										notaOlder = notaOld;
+										notaOld = nota;
+
+								}
+
+								if (nota >= 4) {
+
+									document.getElementById('nota').style.color = "green";
+									document.getElementById('espo').style.display = "none";
+									document.getElementById('espo').value = 1;
+
+								} else if (nota < 3) {
+
+									document.getElementById('nota').style.color = "red";
+									document.getElementById('espo').style.display = "inline";
+
+								} else {
+
+									document.getElementById('nota').style.color = "orange";
+									document.getElementById('espo').style.display = "inline";
+
+								}
+
+
+								document.getElementById('nota').innerHTML = Math.round(nota * 100) / 100;
+
+							} else {
+
+								alert("ERRORE: L'esponente deve essere maggiore di 0 e minore o uguale a 1.\nValore inserito: " + exp);
+								document.getElementById('espo').value = 1;
+
+							}
+
+						} else {
+
+							if (exp.length <= 0) {
+
+								alert("ERRORE: Inserire un esponente.");
+
+							} else {
+
+								alert("ERRORE: L'esponente può avere una precisione di massimo un numero decimale.\nValore inserito: " + exp);
+
+							}
+
+						}
+
+					} else {
+
+						alert("ERRORE: I punti fatti non possono oltrepassare i punti totali.");
+
+					}
+
+				}  else {
+
+					if (pfatti <= 0) {
+
+						alert("ERRORE: I punti fatti non possono essere minori di 1.");
+						document.getElementById('pfatti').value = 1;
+
+					}
+
+					if (ptotali <= 0) {
+
+						alert("ERRORE: I punti totali non possono essere minori di 1.");
+						document.getElementById('ptotali').value = 1;
+
+					}
+
+				}
+
+			}
+
+			setInterval(footerTime, 1000);
+
+		</script>
+	</head>
+<body onload="footerTime()">
+
+	<div class="header">
+	 	<h1>Test 1 17/18, Matan Davidi I2AA</h1>
+	</div>
+
+	<div class="row">
+
+	<div class="col-3 menu">
+	  	<ul>
+	    	<li onclick="printPalindrome()">Palindromo</li>
+	    	<li onclick="calculateGrade()">Calcola nota</li>
+	  	</ul>
+	</div>
+
+	<div class="col-6">
+	  	<div id="palindromo">
+	        <h1>Palindromo</h1>
+	        <form>
+	            <input type="text" value="example" id="palindrome">
+	        </form>
+	        <p id="original">Stampa qui la frase originale</p>
+	        <p id="form1">Stampa qui la frase con la formattazione1</p>
+	        <p id="form2">Stampa qui la frase con la formattazione2</p>
+	        <p id="counts">Stampa qui il numero di vocali:<i id="vowels">xx</i>, consonanti:<i id="consonants">xx</i> e caratteri speciali:<i id="special">xx</i>.</p>
+
+
+	  	</div>
+	  	<div id="Nota">
+	        <h1>Calcolo nota</h1>
+	        <form>
+	            <input type="number" id="pfatti" value="1">
+	            <input type="number" id="ptotali" value="1">
+	            <input type="number" id="espo" value="1" maxlength="3" max="1" min="0">
+	            <!--p>metti qui l'input che ritieni più appropriato per inserire l'esponente </p>-->
+	        </form>
+	        <p>Punti Fatti: <b id="fatti">xx</b>, Punti Totali: <b id="totali">xx</b></p>
+	        <p>Valore EXP: <b id="exp">xx</b>, NOTA: <b id="nota">xx</b></p>
+	        <p>NOTA old: <b id="notao">xx</b> NOTA older: <b id="notaor">xx</b></p>
+	  	</div>
+
+		</div>
+
+		<div class="col-3 right">
+		  <div class="aside">
+		    <h2>Menu</h2>
+		    <p>vengono inseriti degli eventi per scegliere l'sercizio da visualizzare</p>
+		    <h2>Container</h2>
+		    <p>il contenuto cambia a dipendenza della scelta fatta nel menu, devono apparire gli input necessari per permettere la corretta interazione dell'utente con lo script.</p>
+		    <h2>Footer</h2>
+		    <p>inserire la data odierna.</p>
+		  </div>
+		</div>
+
+		</div>
+
+		<div class="footer">
+		  <p id="data">Inserisci qui la data odierna</p>
+		</div>
+  		<a style="position: fixed; bottom:5px;right:10px;" href="../../index.html" title="Torna alla home">
+			<img src="img/home.png" style="width: 75px; height: 75px;">
+	 	</a>
+	</body>
+
+<!-- Mirrored from samtinfo.ch/i16davmat/web.old/web/jqueryfirststep/jqueryfirststep.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Aug 2024 11:37:50 GMT -->
+</html>

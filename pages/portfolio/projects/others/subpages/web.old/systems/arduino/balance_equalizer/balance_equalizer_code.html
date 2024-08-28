@@ -1,0 +1,59 @@
+/**
+* This code allows to move a lit LED inside an 8x8 LED Matrix
+*
+* Author: Matan Davidi
+* Date: 22.05.2018
+*
+*/
+
+const int ROWS[8] = {24,26,28,30,32,34,36,38};
+const int COLS[8] = {25,27,29,31,33,35,37,39};
+
+const int vertPin = A0;
+const int horzPin = A1;
+const int selPin = 13;
+
+// Setup code to run once
+void setup() {
+
+	matrixSetup();
+	thumbSetup();
+	
+}
+
+void thumbSetup() {
+
+	pinMode(vertPin, INPUT);	
+	pinMode(horzPin, INPUT);
+
+}
+
+//Main code to run repeatedly
+void loop() {
+
+	
+  // read the sensor value:
+  int sensorReadingX = analogRead(horzPin);
+
+	// read the sensor value:
+  int sensorReadingY = analogRead(vertPin);
+  
+  // map it to a range from 0 to 100:
+  int joystickMoveX = map(sensorReadingX, 512, 1023, 0, 4);
+  int joystickMoveX = map(sensorReadingY, 512, 1023, 0, 4);
+
+	//Turn off all LEDs.
+	for (int i = 0; i < sizeof(COLS); i++) {
+		
+		for (int j = 0; j < sizeof(ROWS); j++) {
+
+			offMatrix(ROWS[i], COLS[j]);
+
+		}
+
+	}
+
+	//Turn on one LED according to the movement of the Joystick
+	onMatrix(4 + joystickMoveX, 4 + joystickMoveY);
+	
+}

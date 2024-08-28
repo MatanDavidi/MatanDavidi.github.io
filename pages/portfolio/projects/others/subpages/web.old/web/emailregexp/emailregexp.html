@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  
+<!-- Mirrored from samtinfo.ch/i16davmat/web.old/web/emailregexp/emailregexp.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Aug 2024 11:37:49 GMT -->
+<head>
+    <meta charset="utf-8">
+    <title>RegExp - Convalida email</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      function validateEmail() {
+
+        var email = document.getElementById('email').value;
+        var rE = /^[\w.!#$%&’*+/=?^`{|}~-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)$/;
+
+        if (rE.test(email)) {
+
+          alert("La tua email \"" + email + "\" è valida.");
+
+        } else {
+
+          alert("La tua email \"" + email + "\" non è valida.");
+
+        }
+
+      }
+    </script>
+  </head>
+  <body>
+    <p>Inserire un indirizzo email:</p>
+    <input type="email" value="host@dummy-domain.com" name="email" id="email">
+    <input type="submit" name="submit" onclick="validateEmail()">
+	<a style="position: fixed; bottom:5px;right:10px;" href="../../index.html" title="Torna alla home">
+		<img src="img/home.png" style="width: 75px; height: 75px;">
+	</a>
+  </body>
+
+<!-- Mirrored from samtinfo.ch/i16davmat/web.old/web/emailregexp/emailregexp.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Aug 2024 11:37:49 GMT -->
+</html>

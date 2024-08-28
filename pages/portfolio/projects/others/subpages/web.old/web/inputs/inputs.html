@@ -1,0 +1,234 @@
+<!DOCTYPE>
+<html>
+  
+<!-- Mirrored from samtinfo.ch/i16davmat/web.old/web/inputs/inputs.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Aug 2024 11:37:43 GMT -->
+<head>
+    <meta charset="utf-8">
+
+		<title>Input HTML5</title>
+
+		<meta name="author" content="Matan Davidi">
+  	<meta name="keywords" content="Javascript, Input, HTML">
+    <meta name="date" content="15.01.17">
+
+	  <!--<link rel="stylesheet" type="text/css" href="stile/index.css">-->
+
+    <style>
+      table {
+
+        width: 100%;
+        border-collapse: collapse;
+
+      }
+
+      td, tr {
+
+        border: solid;
+        width: 50%;
+        height: 82px;
+        background-color: #E4FFB7;
+
+      }
+
+      tr:nth-child(even) td:nth-child(odd),
+      tr:nth-child(odd) td:nth-child(even) {
+        background-color: #EFFFD2;
+      }
+
+      th {
+
+        background-color: #80B327;
+        color: #FFF;
+
+      }
+
+      tfoot {
+
+        background-color: #77A725;
+
+      }
+
+      p {
+
+        text-align: right;
+
+      }
+
+
+    </style>
+    <script>
+      function printValues() {
+
+        document.getElementById("text").innerHTML = document.getElementById("text_input").value;
+        document.getElementById("psw").innerHTML = document.getElementById("psw_input").value;
+
+        if (document.getElementById("radio1_input").checked) {
+
+          document.getElementById("radio").innerHTML = document.getElementById("radio1_input").value;
+
+        } else if (document.getElementById("radio2_input").checked) {
+
+          document.getElementById("radio").innerHTML = document.getElementById("radio2_input").value;
+
+        } else {
+
+          document.getElementById("radio").innerHTML = document.getElementById("radio3_input").value;
+
+        }
+
+        if (document.getElementById("checkbox1_input").checked) {
+
+          document.getElementById("checkbox_1").innerHTML = document.getElementById("checkbox1_input").value;
+
+        } if (document.getElementById("checkbox2_input").checked){
+
+          document.getElementById("checkbox_2").innerHTML = document.getElementById("checkbox2_input").value;
+
+        }
+
+        document.body.style.backgroundColor = document.getElementById("background_color_input").value;
+        document.getElementById("background_color").innerHTML = document.getElementById("background_color_input").value;
+        document.body.style.color = document.getElementById("foreground_color_input").value;
+        document.getElementById("foreground_color").innerHTML = document.getElementById("foreground_color_input").value;
+        document.getElementById("data").innerHTML = document.getElementById("data_input").value;
+        document.getElementById("data_ora").innerHTML = document.getElementById("data_ora_input").value;
+        document.getElementById("month").innerHTML = document.getElementById("month_input").value;
+        document.getElementById("numero").innerHTML = document.getElementById("numero_input").value;
+        document.getElementById("range").innerHTML = document.getElementById("range_input").value;
+        document.getElementById("ricerca").innerHTML = document.getElementById("ricerca_input").value;
+        document.getElementById("data_ora").innerHTML = document.getElementById("data_ora_input").value;
+
+      }
+    </script>
+
+	  <link rel="icon" type="image/png" href="media/img/favicon.html">
+
+  </head>
+  <body>
+    <table>
+      <th colspan="2">
+        Input HTML5
+      </th>
+      <tr>
+        <td>
+          Text:<br>
+          <input type="text" name="text" id="text_input"><br>
+        </td>
+        <td>
+          <p id="text"></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Password:<br>
+          <input type="password" name="psw" id="psw_input"><br>
+        </td>
+        <td>
+          <p id="psw"></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Radio:<br>
+          <input type="radio" name="radio" value="Scelta_1" id="radio1_input" checked> Scelta_1<br>
+          <input type="radio" name="radio" value="Scelta_2" id="radio2_input"> Scelta_2<br>
+          <input type="radio" name="radio" value="Scelta_2" id="radio3_input"> Scelta_3<br>
+        </td>
+        <td>
+          <p id="radio"></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Checkbox:<br>
+          <input type="checkbox" name="check" value="Scelta_1" id="checkbox1_input">Scelta_1<br>
+          <input type="checkbox" name="check" value="Scelta_2" id="checkbox2_input">Scelta_2<br>
+        </td>
+        <td>
+          <p id="checkbox_1"></p>
+          <p id="checkbox_2"></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Seleziona il colore di sfondo:<br>
+          <input type="color" name="background_color" value="#FFFFFF" id="background_color_input"><br>
+        </td>
+        <td>
+          <p id="background_color"></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Seleziona il colore del testo:<br>
+          <input type="color" name="foreground_color" value="#000000" id="foreground_color_input"><br>
+        </td>
+        <td>
+          <p id="foreground_color"></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Date (entro il 01.01.2000):<br>
+          <input type="date" name="data" max="2000-01-01" id="data_input"><br>
+        </td>
+        <td>
+          <p id="data"></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Datetime-local (data e ora):<br>
+          <input type="datetime-local" name="data_ora" id="data_ora_input"><br>
+        </td>
+        <td>
+          <p id="data_ora"></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Month (month and year):<br>
+          <input type="month" name="month" id="month_input"><br>
+        </td>
+        <td>
+          <p id="month"></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Number (tra 0 e 10):<br>
+          <input type="number" name="numero" min="1" max="10" id="numero_input"><br>
+        </td>
+        <td>
+          <p id="numero"></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Range:<br>
+          <input type="range" name="range" id="range_input"><br>
+        </td>
+        <td>
+          <p id="range"></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Search:<br>
+          <input type="search" name="ricerca" id="ricerca_input"><br>
+        </td>
+        <td>
+          <p id="ricerca"></p>
+        </td>
+      </tr>
+        <td colspan="2">
+          <input style="width: 100%;" type="submit" onclick="printValues()" onkeydown="printValues()">
+        </td>
+    </table>
+	<a style="position: fixed; bottom:5px;right:10px;" href="../../index.html" title="Torna alla home">
+		<img src="img/home.png" style="width: 75px; height: 75px;">
+	</a>
+  </body>
+
+<!-- Mirrored from samtinfo.ch/i16davmat/web.old/web/inputs/inputs.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Aug 2024 11:37:44 GMT -->
+</html>

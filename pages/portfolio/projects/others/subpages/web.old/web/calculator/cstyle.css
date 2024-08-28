@@ -1,0 +1,63 @@
+/* ============================== CALCOLATRICE ========================== */
+body {
+    height: -webkit-fill-available;
+}
+
+#calculator {
+    padding: 1%;
+}
+
+table {
+    margin: auto;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    margin: 0 10% 0 10%;
+    border-collapse: collapse;
+}
+
+#calculator table * {
+    border-collapse: collapse;
+}
+
+#calculator table td {
+    text-align: center;
+}
+
+button, input {
+
+    width: -webkit-fill-available;
+    background-color: white;
+    border: solid;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+input {
+
+    font-size: -webkit-xxx-large;
+    
+}
+
+#calc {
+
+    text-align: right;
+
+}
+
+#switch {
+
+    margin: 0;
+
+}
+
+#science button {
+
+    margin: 0;
+
+}
+
+#oneOver {
+
+    margin: 0;
+
+}

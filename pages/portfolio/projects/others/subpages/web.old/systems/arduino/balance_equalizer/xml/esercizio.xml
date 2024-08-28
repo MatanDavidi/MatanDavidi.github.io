@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<esercizi>
+    <esercizio>
+        <titolo>Balance Equalizer</titolo>
+        <descrizione>
+            <p>Questo programma controlla una matrice di LED 8x8 con un Thumb Joystick.</p>
+            <p>Il thumb joystick è connesso ai pin analogici 0 e 1.</p>
+            <p>La matrice è collegata ai pin digitali 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36 e 37
+            </p>
+            <p>Se il joystick rimane in posizione neutrale, viene acceso il LED al centro della matrice, spostando il
+                joystick si sposta anche il LED acceso.
+            </p>
+            <p>Infatti, spostando in avanti o in dietro il joystick il LED accesso sarà più in alto o più in basso,
+                mentre spostandolo a sinistra o destra si sposta anche il LED orizzontalmente.
+            </p>
+        </descrizione>
+        <materiale>
+            <ul>
+                <li>1 Arduino Mega 2560</li>
+                <li>1 Matrice di LED monocromatica 8x8 (colore indifferente)</li>
+                <li>1 Thumb Joystick</li>
+                <li>8 Resistenze da 330 Ω (non necessarie ma consigliate)</li>
+            </ul>
+        </materiale>
+        <schemi>
+            <p>Schema grafico:</p>
+            <a href="img/balance_equalizer_bb.svg">
+                <img src="img/balance_equalizer_bb.svg" alt="Schema grafico"/>
+            </a>
+            <p>Schema elettrico:</p>
+            <a href="img/balance_equalizer_schem.svg">
+                <img src="img/balance_equalizer_schem.svg" alt="Schema elettrico"/>
+            </a>
+        </schemi>
+        <codice>
+            <a href="img/balance_equalizer_loop.JPG">
+                <img src="img/balance_equalizer_loop.JPG" alt="Codice importante"/>
+            </a>
+            <a href="balance_equalizer.ino">
+                <h3>Codice</h3>
+            </a>
+        </codice>
+    </esercizio>
+    <esercizio>
+        <titolo>LED Matrix</titolo>
+        <descrizione>
+            <p>Questo programma accende e spegne tutti i LED di una matrice 8x8.</p>
+            <p>La matrice è collegata ai pin digitali 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36 e 37
+            </p>
+        </descrizione>
+        <materiale>
+            <ul>
+                <li>1 Arduino Mega 2560</li>
+                <li>1 Matrice di LED monocromatica 8x8 (colore indifferente)</li>
+                <li>8 Resistenze da 330 Ω (non necessarie ma consigliate)</li>
+            </ul>
+        </materiale>
+        <schemi>
+            <p>Schema grafico:</p>
+            <a href="img/led_matrix_bb.svg">
+                <img src="img/led_matrix_bb.svg" alt="Schema grafico"/>
+            </a>
+            <p>Schema elettrico:</p>
+            <a href="img/led_matrix_schem.png">
+                <img src="img/led_matrix_schem.png" alt="Schema elettrico"/>
+            </a>
+        </schemi>
+        <codice>
+            <a href="img/joystick_code.svg">
+                <img src="img/led_matrix_code.svg" alt="Codice importante"/>
+            </a>
+            <a href="LED_Matrix.ino">
+                <h3>Codice</h3>
+            </a>
+            <a href="Matrix.ino">
+                <h3>Codice libreria (gentilmente offertami da Giulio Bosco)</h3>
+            </a>
+        </codice>
+    </esercizio>
+    <esercizio>
+        <titolo>Joystick</titolo>
+        <descrizione>
+            <p>Questo programma riceve e permette di leggere tramite il monitor seriale i valori inviati da un thumb joystick.</p>
+            <p>Il thumb joystick è connesso ai pin analogici 0 e 1.</p>
+        </descrizione>
+        <materiale>
+            <ul>
+                <li>1 Arduino Mega 2560</li>
+                <li>1 Thumb joystick</li>
+            </ul>
+        </materiale>
+        <schemi>
+            <p>Schema grafico:</p>
+            <a href="img/joystick_bb.svg">
+                <img src="img/joystick_bb.svg" alt="Schema grafico"/>
+            </a>
+            <p>Schema elettrico:</p>
+            <a href="img/joystick_schem.png">
+                <img src="img/joystick_schem.png" alt="Schema elettrico"/>
+            </a>
+        </schemi>
+        <codice>
+            <a href="img/joystick_code.svg">
+                <img src="img/joystick_code.svg" alt="Codice importante"/>
+            </a>
+            <a href="Joystick.ino">
+                <h3>Codice</h3>
+            </a>
+        </codice>
+    </esercizio>
+</esercizi>
